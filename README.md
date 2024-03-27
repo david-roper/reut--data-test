@@ -13,4 +13,4 @@ current dependencies
 ##
 How to run
 
-```uvicorn main:app --reload```
+```uvicorn exampleUI:app --reload```
