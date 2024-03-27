@@ -12,11 +12,12 @@ df = df.slice(1) #removes top row
 df = df.rename({"Please enter the participant number that was sent to you here so that we can identify you:":"participant ID"})
 df= df.sort(["participant ID", "What was yesterday&apos;s date? (i.e. the date of your bedtime)"])
 
-
+#convert to pandas for name filtering
 df = df.to_pandas()
-
 df.loc[df['participant ID'].str.contains('[a-zA-Z]'), 'participant ID'] = ''
 
+
+#convert back into polar df
 df = pl.from_pandas(df)
 
 print(df)
