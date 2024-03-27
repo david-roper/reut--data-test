@@ -1,9 +1,7 @@
 # reut-data-test
-
 Testing data conversion and pydantics' FASTUI library
 
 ##
-
 current dependencies
 
 - polars
@@ -13,7 +11,6 @@ current dependencies
 - uvicorn
 
 ##
-
 How to run
 
-`uvicore main:app --reload`
+```uvicorn main:app --reload```
