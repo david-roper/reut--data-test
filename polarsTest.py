@@ -13,6 +13,10 @@ df = df.rename({"Please enter the participant number that was sent to you here s
 df= df.sort(["participant ID", "What was yesterday&apos;s date? (i.e. the date of your bedtime)"])
 
 
-df = df.filter(pl.col("participant ID"))
+df = df.to_pandas()
+
+df.loc[df['participant ID'].str.contains('[a-zA-Z]'), 'participant ID'] = ''
+
+df = pl.from_pandas(df)
 
 print(df)
