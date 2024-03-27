@@ -1,7 +1,7 @@
 import polars as pl
 import polars.selectors as cs
 
-df = pl.read_excel('raw_morning_data.xlsx')
+df = pl.read_excel('data/raw_morning_data.xlsx')
 
 
 df = df.drop(["Respondent ID","Collector ID","Start Date", "End Date",	"IP Address",	"Email Address",	"First Name",	"Last Name",	"Custom Data 1"])

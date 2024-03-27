@@ -8,9 +8,9 @@ workbook = Workbook()
 workbook2 = Workbook()
 finalBook = Workbook()
 
-workbook.LoadFromFile('morningdata.xlsx')
-workbook2.LoadFromFile('eveningdata.xlsx')
-finalBook.LoadFromFile('SleepLogFormattingSheet.xlsx')
+workbook.LoadFromFile('data/morningdata.xlsx')
+workbook2.LoadFromFile('data/eveningdata.xlsx')
+finalBook.LoadFromFile('data/SleepLogFormattingSheet.xlsx')
 
 
 morningSheet = workbook.Worksheets[0]
@@ -49,7 +49,7 @@ for j in range(morningRange.Columns.Length):
 
 
 # Save the second workbook
-finalBook.SaveToFile("CopyCellsToDifferentWorkbook.xlsx", ExcelVersion.Version2013)
+finalBook.SaveToFile("data/CopyCellsToDifferentWorkbook.xlsx", ExcelVersion.Version2013)
 workbook.Dispose()
 workbook2.Dispose()
 finalBook.Dispose()
