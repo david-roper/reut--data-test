@@ -30,12 +30,22 @@ for i,col in enumerate(df.columns):
     if (col == ''):
         df.rename(columns={col: f"column_{i}"}, inplace=True)
 
-
+#convert to polars to concat the dfs back together
 print('\nnow test concat')
 df2 = df2.to_pandas()
 
+
+
 df = pd.concat([df2,df], ignore_index=True)
 print(df)
+
+"""
+Write code to do the following
+go through all the sorted dates for each participant id
+if the difference between to dates is more than one day, insert that missing data into the dataframe
+"""
+
+
 
 
 #convert back into polar df
