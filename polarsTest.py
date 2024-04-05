@@ -30,14 +30,7 @@ for i,col in enumerate(df.columns):
     if (col == ''):
         df.rename(columns={col: f"column_{i}"}, inplace=True)
 
-#convert to polars to concat the dfs back together
-print('\nnow test concat')
-df2 = df2.to_pandas()
 
-
-
-df = pd.concat([df2,df], ignore_index=True)
-print(df)
 
 """
 Write code to do the following
@@ -45,8 +38,16 @@ go through all the sorted dates for each participant id
 if the difference between to dates is more than one day, insert that missing data into the dataframe
 """
 
+df['What was yesterday&apos;s date? (i.e. the date of your bedtime)'] = pd.to_datetime(df['What was yesterday&apos;s date? (i.e. the date of your bedtime)'],format='%d/%m/%Y')
 
+df['What was yesterday&apos;s date? (i.e. the date of your bedtime)'] = df['What was yesterday&apos;s date? (i.e. the date of your bedtime)'].dt.strftime('%d/%m/%Y')
 
+#convert to polars to concat the dfs back together
+print('\nnow test concat')
+df2 = df2.to_pandas()
+
+df = pd.concat([df2,df], ignore_index=True)
+print(df)
 
 #convert back into polar df
 df = pl.from_pandas(df)
