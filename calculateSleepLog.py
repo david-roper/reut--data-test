@@ -3,6 +3,8 @@ import pandas as pd
 
 df = pl.read_excel('data/formattedMorning.xlsx')
 
+df = df.slice(1)
+
 print(df)
 
 '''
