@@ -19,8 +19,6 @@ df = df.slice(1)
 
 df = df.with_columns(pl.col("What is today's date? (DD/MM/YYYY)").apply(date_converter))
 
-print(df)
-print(df2)
 
 
 '''
